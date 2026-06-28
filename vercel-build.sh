@@ -6,11 +6,17 @@ npm install -g pnpm
 
 echo "=== Building frontend ==="
 cd web
+
+# Install dependencies in workspace root
 pnpm install --frozen-lockfile
-pnpm --filter react-template run build
+
+# Build classic template
+cd classic
+pnpm run build
 cd ..
 
-mkdir -p public
-cp -r web/classic/dist/* public/
+# Copy built files to public directory
+mkdir -p ../public
+cp -r classic/dist/* ../public/
 
 echo "=== Frontend build complete ==="
