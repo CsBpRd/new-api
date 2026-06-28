@@ -1,8 +1,7 @@
-package main
+package handler
 
 import (
 	"net/http"
-	"os"
 	"sync"
 
 	"github.com/QuantumNous/new-api/common"
